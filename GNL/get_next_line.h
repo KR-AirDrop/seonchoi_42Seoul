@@ -6,7 +6,7 @@
 /*   By: seonchoi <seonchoi@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/10 02:41:53 by seonchoi          #+#    #+#             */
-/*   Updated: 2021/02/15 16:48:13 by seonchoi         ###   ########.fr       */
+/*   Updated: 2021/02/15 20:08:09 by seonchoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 
 # define REMAIN 42
 # ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 10
+#  define BUFFER_SIZE 5
 # endif
 
 int		get_next_line(int fd, char **line);

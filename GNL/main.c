@@ -6,7 +6,7 @@
 /*   By: seonchoi <seonchoi@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/10 14:33:11 by seonchoi          #+#    #+#             */
-/*   Updated: 2021/02/15 16:23:24 by seonchoi         ###   ########.fr       */
+/*   Updated: 2021/02/15 20:06:56 by seonchoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	main(int ac, char **av)
 	char* line;
 	int	check;
 	int	fd;
-
+	
 	fd = open("test.txt", O_RDONLY);
 	while ((check = get_next_line(fd, &line)) > 0)
 	{
