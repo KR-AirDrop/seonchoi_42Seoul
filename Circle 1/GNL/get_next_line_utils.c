@@ -6,11 +6,21 @@
 /*   By: seonchoi <seonchoi@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/10 02:42:15 by seonchoi          #+#    #+#             */
-/*   Updated: 2021/02/15 16:23:16 by seonchoi         ###   ########.fr       */
+/*   Updated: 2021/03/03 12:38:42 by seonchoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
+
+size_t		ft_strlen(const char *str)
+{
+	size_t	i;
+
+	i = 0;
+	while (str[i])
+		i++;
+	return (i);
+}
 
 void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
@@ -51,23 +61,15 @@ char	*ft_strdup(const char *s1)
 	return (s2);
 }
 
-size_t		ft_strlen(const char *str)
-{
-	size_t	i;
-
-	i = 0;
-	while (str[i])
-		i++;
-	return (i);
-}
-
 char	*ft_strjoin(char const *s1, char const *s2)
 {
 	int		len;
 	char	*str;
 
-	if (s1 == 0 || s2 == 0)
-		return (0);
+	if (!(s1) && !(s2))
+		return (NULL);
+	else if (!(s1) || !(s2))
+		return (!(s1) ? ft_strdup(s2) : ft_strdup(s1));
 	len = ft_strlen(s1) + ft_strlen(s2) + 1;
 	if (!(str = (char *)malloc(sizeof(char) * len)))
 		return (NULL);
@@ -75,21 +77,4 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	ft_memcpy(str + ft_strlen(s1), s2, ft_strlen(s2));
 	str[ft_strlen(s1) + ft_strlen(s2)] = '\0';
 	return (str);
-}
-
-size_t	ft_strlcpy(char *dst, char *src, size_t size)
-{
-	size_t	a;
-
-	if (dst == 0 && src == 0)
-		return (0);
-	a = 0;
-	while ((src[a]) && a + 1 < size)
-	{
-		dst[a] = src[a];
-		a++;
-	}
-	if (size > 0)
-		dst[a] = '\0';
-	return (ft_strlen(src));
 }
